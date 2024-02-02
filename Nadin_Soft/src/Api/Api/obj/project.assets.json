@@ -2,6 +2,35 @@
   "version": 3,
   "targets": {
     "net7.0": {
+      "AutoMapper/12.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.CSharp": "4.7.0"
+        },
+        "compile": {
+          "lib/netstandard2.1/AutoMapper.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/AutoMapper.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "AutoMapper.Extensions.Microsoft.DependencyInjection/12.0.1": {
+        "type": "package",
+        "dependencies": {
+          "AutoMapper": "[12.0.1]",
+          "Microsoft.Extensions.Options": "6.0.0"
+        },
+        "compile": {
+          "lib/netstandard2.1/AutoMapper.Extensions.Microsoft.DependencyInjection.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/AutoMapper.Extensions.Microsoft.DependencyInjection.dll": {}
+        }
+      },
       "Azure.Core/1.25.0": {
         "type": "package",
         "dependencies": {
@@ -1329,6 +1358,32 @@
           }
         }
       },
+      "Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "AutoMapper.Extensions.Microsoft.DependencyInjection": "12.0.1",
+          "Domain": "1.0.0",
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "7.0.15",
+          "Microsoft.Extensions.DependencyInjection": "7.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Application.dll": {}
+        }
+      },
+      "Common/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/Common.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Common.dll": {}
+        }
+      },
       "Domain/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
@@ -1341,10 +1396,73 @@
         "runtime": {
           "bin/placeholder/Domain.dll": {}
         }
+      },
+      "Infrastructure/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Application": "1.0.0",
+          "Common": "1.0.0",
+          "Persistence": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Infrastructure.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Infrastructure.dll": {}
+        }
+      },
+      "Persistence/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Domain": "1.0.0",
+          "Microsoft.AspNetCore.Authentication.JwtBearer": "7.0.15",
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "7.0.15",
+          "Microsoft.AspNetCore.Mvc.NewtonsoftJson": "7.0.15",
+          "Microsoft.AspNetCore.OpenApi": "7.0.15",
+          "Microsoft.EntityFrameworkCore.SqlServer": "7.0.15",
+          "Swashbuckle.AspNetCore": "6.5.0"
+        },
+        "compile": {
+          "bin/placeholder/Persistence.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Persistence.dll": {}
+        }
       }
     }
   },
   "libraries": {
+    "AutoMapper/12.0.1": {
+      "sha512": "hvV62vl6Hp/WfQ24yzo3Co9+OPl8wH8hApwVtgWpiAynVJkUcs7xvehnSftawL8Pe8FrPffBRM3hwzLQqWDNjA==",
+      "type": "package",
+      "path": "automapper/12.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "automapper.12.0.1.nupkg.sha512",
+        "automapper.nuspec",
+        "icon.png",
+        "lib/netstandard2.1/AutoMapper.dll",
+        "lib/netstandard2.1/AutoMapper.xml"
+      ]
+    },
+    "AutoMapper.Extensions.Microsoft.DependencyInjection/12.0.1": {
+      "sha512": "+g/K+Vpe3gGMKGzjslMOdqNlkikScDjWfVvmWTayrDHaG/n2pPmFBMa+jKX1r/h6BDGFdkyRjAuhFE3ykW+r1g==",
+      "type": "package",
+      "path": "automapper.extensions.microsoft.dependencyinjection/12.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
+        "automapper.extensions.microsoft.dependencyinjection.nuspec",
+        "icon.png",
+        "lib/netstandard2.1/AutoMapper.Extensions.Microsoft.DependencyInjection.dll"
+      ]
+    },
     "Azure.Core/1.25.0": {
       "sha512": "X8Dd4sAggS84KScWIjEbFAdt2U1KDolQopTPoHVubG2y3CM54f9l6asVrP5Uy384NWXjsspPYaJgz5xHc+KvTA==",
       "type": "package",
@@ -3717,15 +3835,38 @@
         "useSharedDesignerContext.txt"
       ]
     },
+    "Application/1.0.0": {
+      "type": "project",
+      "path": "../../Core/Application/Application.csproj",
+      "msbuildProject": "../../Core/Application/Application.csproj"
+    },
+    "Common/1.0.0": {
+      "type": "project",
+      "path": "../../Common/Common/Common.csproj",
+      "msbuildProject": "../../Common/Common/Common.csproj"
+    },
     "Domain/1.0.0": {
       "type": "project",
       "path": "../../Core/Domain/Domain.csproj",
       "msbuildProject": "../../Core/Domain/Domain.csproj"
+    },
+    "Infrastructure/1.0.0": {
+      "type": "project",
+      "path": "../../Infestructure/Infrastructure/Infrastructure.csproj",
+      "msbuildProject": "../../Infestructure/Infrastructure/Infrastructure.csproj"
+    },
+    "Persistence/1.0.0": {
+      "type": "project",
+      "path": "../../Infestructure/Persistence/Persistence.csproj",
+      "msbuildProject": "../../Infestructure/Persistence/Persistence.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net7.0": [
+      "Application >= 1.0.0",
+      "Common >= 1.0.0",
       "Domain >= 1.0.0",
+      "Infrastructure >= 1.0.0",
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 7.0.15",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 7.0.15",
       "Microsoft.AspNetCore.Mvc.NewtonsoftJson >= 7.0.15",
@@ -3733,6 +3874,7 @@
       "Microsoft.EntityFrameworkCore.Design >= 7.0.15",
       "Microsoft.EntityFrameworkCore.SqlServer >= 7.0.15",
       "Microsoft.EntityFrameworkCore.Tools >= 7.0.15",
+      "Persistence >= 1.0.0",
       "Swashbuckle.AspNetCore >= 6.5.0"
     ]
   },
@@ -3767,8 +3909,20 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
+            "C:\\Users\\Ali\\Documents\\GitHub\\Nadin_Soft\\Nadin_Soft\\src\\Common\\Common\\Common.csproj": {
+              "projectPath": "C:\\Users\\Ali\\Documents\\GitHub\\Nadin_Soft\\Nadin_Soft\\src\\Common\\Common\\Common.csproj"
+            },
+            "C:\\Users\\Ali\\Documents\\GitHub\\Nadin_Soft\\Nadin_Soft\\src\\Core\\Application\\Application.csproj": {
+              "projectPath": "C:\\Users\\Ali\\Documents\\GitHub\\Nadin_Soft\\Nadin_Soft\\src\\Core\\Application\\Application.csproj"
+            },
             "C:\\Users\\Ali\\Documents\\GitHub\\Nadin_Soft\\Nadin_Soft\\src\\Core\\Domain\\Domain.csproj": {
               "projectPath": "C:\\Users\\Ali\\Documents\\GitHub\\Nadin_Soft\\Nadin_Soft\\src\\Core\\Domain\\Domain.csproj"
+            },
+            "C:\\Users\\Ali\\Documents\\GitHub\\Nadin_Soft\\Nadin_Soft\\src\\Infestructure\\Infrastructure\\Infrastructure.csproj": {
+              "projectPath": "C:\\Users\\Ali\\Documents\\GitHub\\Nadin_Soft\\Nadin_Soft\\src\\Infestructure\\Infrastructure\\Infrastructure.csproj"
+            },
+            "C:\\Users\\Ali\\Documents\\GitHub\\Nadin_Soft\\Nadin_Soft\\src\\Infestructure\\Persistence\\Persistence.csproj": {
+              "projectPath": "C:\\Users\\Ali\\Documents\\GitHub\\Nadin_Soft\\Nadin_Soft\\src\\Infestructure\\Persistence\\Persistence.csproj"
             }
           }
         }

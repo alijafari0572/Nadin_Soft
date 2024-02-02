@@ -5,13 +5,13 @@ VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Api", "Api", "{EC41FA97-C9E7-4A71-8D49-DF174D07EB54}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api", "src\Api\Api\Api.csproj", "{32D212E8-84ED-4C17-9A9D-B1AAF2DFBFF6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Api", "src\Api\Api\Api.csproj", "{32D212E8-84ED-4C17-9A9D-B1AAF2DFBFF6}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{97EE06D9-7A80-4A24-91C6-763FAFDEB18B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application", "src\Core\Application\Application.csproj", "{F50A7232-2355-4E61-B9ED-EE3FE75BDE5F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application", "src\Core\Application\Application.csproj", "{F50A7232-2355-4E61-B9ED-EE3FE75BDE5F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "src\Core\Domain\Domain.csproj", "{62BCA139-FA89-4617-A2CB-4922725A0465}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "src\Core\Domain\Domain.csproj", "{62BCA139-FA89-4617-A2CB-4922725A0465}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infestructure", "Infestructure", "{C384ADC8-ADC5-4EE7-BBC5-8BE40BF8F26D}"
 EndProject
@@ -19,11 +19,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{3038D14E-90D3-
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{FB6DB1A8-8DFB-409C-B5BD-E0E42CB85B34}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "src\Infestructure\Infrastructure\Infrastructure.csproj", "{CAEB8724-FE38-4250-8061-35E7E307A443}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure", "src\Infestructure\Infrastructure\Infrastructure.csproj", "{CAEB8724-FE38-4250-8061-35E7E307A443}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Persistence", "src\Infestructure\Persistence\Persistence.csproj", "{E371E060-3C8B-41CB-B316-E75DDCDAAAF9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Persistence", "src\Infestructure\Persistence\Persistence.csproj", "{E371E060-3C8B-41CB-B316-E75DDCDAAAF9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "src\Common\Common\Common.csproj", "{07EA9A03-33B7-4D32-A0DF-5A97127FA8A5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common", "src\Common\Common\Common.csproj", "{07EA9A03-33B7-4D32-A0DF-5A97127FA8A5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{FB7CAAEC-A37D-47FA-A0E5-C7F159FBC280}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

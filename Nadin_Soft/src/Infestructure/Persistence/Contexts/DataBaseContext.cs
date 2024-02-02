@@ -15,5 +15,9 @@ namespace Persistence.Contexts
        : base(databaseOperations)
         {
         }
+        #region Entities
+        DbSet<ApplicationUser> Users_tbl { get; set; }
+        DbSet<Product> Products_tbl { get; set; }
+        #endregion
     }
 }
